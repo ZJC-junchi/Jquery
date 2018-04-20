@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            height: 15px;
+            background: url("images/bg.jpg") no-repeat;
+            margin: 200px auto;
+        }
+        li:hover{
+            cursor: pointer;
+        }
+        ul{
+            list-style: none;
+        }
+        li{
+            font-size: 13px;
+        }
+        .box>ul>li{
+            width: 90px;
+
+            float: left;
+            background: url("images/libg.jpg");
+            padding-left: 10px;
+            position: relative;
+        }
+        .box>ul>li>ul{
+            position: absolute;
+            top: 15px;
+            background: url("images/libg.jpg");
+            display: none;
+            margin-top: 1px;
+        }
+        .box>ul>li>ul>li{
+            margin-top: 10px;
+            background: url("images/libg.jpg");
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li>一级菜单
+                <ul>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li>一级菜单
+                <ul>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+            <li>一级菜单
+                <ul>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                    <li>二级菜单</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        var liArr=$(".box>ul>li");
+        for (var i=0;i<liArr.length;i++){
+            liArr[i].onmouseenter=function () {
+                $(this).children("ul").fadeIn(1000);
+            };
+            liArr[i].onmouseleave=function () {
+                $(this).children("ul").fadeOut(1000);
+            }
+        }
+    })
+</script>

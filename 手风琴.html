@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 200px;
+            text-align: center;
+        }
+        ul li{
+            list-style: none;
+        }
+        span{
+            background: deepskyblue;
+            font-size: 16px;
+            height: 30px;
+            display: block;
+            border-bottom: 1px solid #999999;
+            cursor: pointer;
+        }
+        li{
+            border: 1px solid #999;
+        }
+        .son{
+            height: 200px;
+            display: none;
+            margin-bottom: 1px;
+        }
+
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+<div class="box">
+    <ul>
+        <li>
+            <span>我是标题1</span>
+            <div class="son">我是二级标题1</div>
+        </li>
+        <li>
+            <span>我是标题2</span>
+            <div class="son">我是二级标题2</div>
+        </li>
+        <li>
+            <span>我是标题3</span>
+            <div class="son">我是二级标题3</div>
+        </li>
+    </ul>
+</div>
+</body>
+</html>
+<script>
+    $(function () {
+        $("span").click(function () {
+            $(this).next().show().parent().siblings("li").find("div").hide();
+        })
+    })
+</script>

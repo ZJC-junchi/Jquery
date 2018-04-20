@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            width: 322px;
+            list-style: none;
+            border: 1px solid #999999;
+            border-bottom: 0;
+            height: 34px;
+        }
+        li{
+            float: left;
+            width: 80px;
+            height: 34px;
+            text-align: center;
+            line-height: 34px;
+            position: relative;
+            cursor: pointer;
+            border-top: 3px solid #ffffff;
+        }
+        .box{
+            width: 1008px;
+            height: 518px;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        span{
+            position: absolute;
+            top: 10px;
+            right: 0;
+            width: 1px;
+            height: 14px;
+            background: red;
+        }
+        .center{
+            width: 1002px;
+            height: 477px;
+            border: 1px solid #999999;
+        }
+        .li1{
+            border-top: 3px solid red;
+        }
+        .main{
+            display: none;
+        }
+        .show{
+            display: block;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+    <div class="box">
+        <ul>
+            <li class="li1">麋鹿<span></span></li>
+            <li>永恒<span></span></li>
+            <li>拂晓<span></span></li>
+            <li>迷路</li>
+        </ul>
+        <div class="center">
+            <div class="main show"><img src="imgs/guojidapai.jpg"></div>
+            <div class="main"><img src="imgs/guozhuangmingpin.jpg"></div>
+            <div class="main"><img src="imgs/nanshijingpin.jpg"></div>
+            <div class="main"><img src="imgs/qingjieyongpin.jpg"></div>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        $("li").mouseenter(function () {
+            $(this).addClass("li1").siblings("li").removeClass();
+            $(".center div").eq($(this).index()).addClass("show").siblings("div").removeClass("show");
+        })
+    })
+</script>

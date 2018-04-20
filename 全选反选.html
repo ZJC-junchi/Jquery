@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 400px;
+            margin: 100px auto;
+        }
+        table{
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 1px solid #999999;
+        }
+        th{
+            background: deepskyblue;
+            width: 100px;
+            height: 30px;
+            font-size: 15px;
+            border: 1px solid #666666;
+        }
+        td{
+            background: #bbbbbb;
+            width: 100px;
+            height: 30px;
+            font-size: 12px;
+            text-align: center;
+            border: 1px solid #666666;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+    <div class="box">
+        <table>
+            <thead>
+                <tr>
+                    <th><input type="checkbox" class="wudi"></th>
+                    <th>1</th>
+                    <th>2</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>45</td>
+                <td>46</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>12</td>
+                <td>13</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>12</td>
+                <td>15</td>
+            </tr>
+            <tr>
+                <td><input type="checkbox"></td>
+                <td>16</td>
+                <td>27</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        $(".wudi").click(function () {
+            $("tbody input").prop("checked",$(".wudi").prop("checked"))
+        });
+        $("tbody input").click(function () {
+            if($("tbody input").length===$("tbody input:checked").length){
+                $(".wudi").prop("checked",true)
+            }else {
+                $(".wudi").prop("checked",false)
+            }
+        })
+    })
+</script>

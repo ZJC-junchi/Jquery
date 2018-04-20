@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        select{
+            width: 200px;
+            height: 400px;
+            background: hotpink;
+            font-size: 15px;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+    <select id="sel1" multiple>
+        <option>香蕉</option>
+        <option>苹果</option>
+        <option>大压力</option>
+        <option>吗哈哈</option>
+    </select>
+<button> >>> </button>
+<button> <<< </button>
+<button> > </button>
+<button> < </button>
+    <select id="sel2" multiple>
+
+    </select>
+</body>
+</html>
+<script>
+    $(function () {
+        $("button").eq(0).click(function () {
+            $("#sel1 option").appendTo($("#sel2"))
+        });
+        $("button").eq(1).click(function () {
+            $("#sel2 option").appendTo($("#sel1"))
+        });
+        $("button").eq(2).click(function () {
+            $("#sel1 option:selected").appendTo($("#sel2"))
+        });
+        $("button").eq(3).click(function () {
+            $("#sel2 option:selected").appendTo($("#sel1"))
+        })
+    })
+</script>

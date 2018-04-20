@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background: yellow;
+            margin: 200px auto;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+<button>开灯</button>
+<button>关灯</button>
+    <div class="box">
+
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        console.log($($("button")[0]));
+        $("button").eq(0).click(function () {
+            $("body")[0].style.background="#fff";
+        });
+        $("button").eq(1).click(function () {
+            $("body")[0].style.background="#000";
+        })
+    })
+</script>

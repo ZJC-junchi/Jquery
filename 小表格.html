@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            border-collapse: collapse;
+            border-spacing: 0;
+        }
+        th{
+            background: deepskyblue;
+            border: 1px solid #999999;
+            font-size: 15px;
+        }
+        td{
+            background: hotpink;
+            text-align: center;
+            font-size: 12px;
+            border: 1px solid #999999;
+        }
+
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+<button>数据获取</button>
+    <table>
+        <thead>
+            <tr>
+                <th>名称</th>
+                <th>职业</th>
+                <th>排名</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    $(function () {
+        var data=[
+            {"name":"麋鹿","zhiye":"时空术士","num":"1"},
+            {"name":"麋鹿","zhiye":"时空术士","num":"2"},
+            {"name":"麋鹿","zhiye":"时空术士","num":"3"}
+        ];
+        $("tbody").html("");
+        $("button").click(function () {
+            console.log(data.length);
+            var str="";
+            for(var i=0;i<data.length;i++){
+                str +="<tr><td>"+data[i].name+"</td><td>"+data[i].zhiye+"</td><td>"+data[i].num+"</td></tr>";
+                $("tbody").html(str);
+            }
+
+        });
+
+    })
+</script>

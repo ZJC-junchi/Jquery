@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-size: 12px;
+        }
+        .box{
+            width: 298px;
+            height: 248px;
+            border: 1px solid pink;
+            margin: 100px auto;
+            overflow: hidden;
+        }
+        ul{
+            float: left;
+            list-style: none;
+        }
+        .left li,.right li{
+            width: 48px;
+            height: 27px;
+            text-align: center;
+            line-height: 27px;
+            cursor: pointer;
+            background: url("images1/lili.jpg") repeat-x;
+        }
+        .left li:hover,.right li:hover{
+            background: url("images1/abg.gif") repeat-x;
+        }
+        .center li{
+            border-right: 1px solid pink;
+            border-left: 1px solid pink;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+    <div class="box">
+        <ul class="left">
+            <li>羽绒服</li>
+            <li>登山鞋</li>
+            <li>冬裙</li>
+            <li>毛衣</li>
+            <li>棉服</li>
+            <li>男包</li>
+            <li>男毛衣</li>
+            <li>男棉服</li>
+            <li>男靴</li>
+        </ul>
+        <ul class="center">
+            <li><img src="images1/羽绒服.jpg"></li>
+            <li><img src="images1/登山鞋.jpg"></li>
+            <li><img src="images1/冬裙.jpg"></li>
+            <li><img src="images1/毛衣.jpg"></li>
+            <li><img src="images1/棉服.jpg"></li>
+            <li><img src="images1/男包.jpg"></li>
+            <li><img src="images1/男毛衣.jpg"></li>
+            <li><img src="images1/男棉服.jpg"></li>
+            <li><img src="images1/男靴.jpg"></li>
+            <li><img src="images1/呢大衣.jpg"></li>
+            <li><img src="images1/牛仔裤.jpg"></li>
+            <li><img src="images1/女包.jpg"></li>
+            <li><img src="images1/女裤.jpg"></li>
+            <li><img src="images1/女靴.jpg"></li>
+            <li><img src="images1/皮带.jpg"></li>
+            <li><img src="images1/皮衣.jpg"></li>
+            <li><img src="images1/围巾.jpg"></li>
+            <li><img src="images1/雪地靴.jpg"></li>
+        </ul>
+        <ul class="right">
+            <li>呢大衣</li>
+            <li>牛仔裤</li>
+            <li>女包</li>
+            <li>女裤</li>
+            <li>女靴</li>
+            <li>皮带</li>
+            <li>皮衣</li>
+            <li>围巾</li>
+            <li>雪地靴</li>
+        </ul>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        $(".left li").mouseenter(function () {
+            $(".center li").eq($(this).index()).show().siblings("li").hide();
+        });
+        $(".right li").mouseenter(function () {
+            $(".center li").eq($(this).index()+9).show().siblings("li").hide();
+        })
+    })
+</script>

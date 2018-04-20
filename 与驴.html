@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 900px;
+            margin: 100px auto;
+            text-align: center;
+        }
+        @keyframes shan {
+            0%,100%{                                    
+                opacity: 1;
+            }
+            50%{
+                opacity: 0;
+            }
+        }
+        .shu{
+            animation: shan .7s infinite;
+        }
+
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+<div class="box">
+    <h1>hellow hellow 你们好
+        <span>
+
+        </span>
+        <span class="shu">丨</span>
+    </h1>
+    <input type="text">
+    <button>提交</button>
+</div>
+</body>
+</html>
+<script>
+    $(function () {
+        var str="红鲤鱼与绿鲤鱼与驴";
+        var arr=str.split("");
+        var timer=null;
+        var num=0;
+        var str2="";
+        timer=setInterval(function () {
+            if(arr[num]===undefined){
+                clearInterval(timer);
+                $(".shu").hide();
+            }else {
+                str2+=arr[num];
+                $("span").eq(0).text(str2);
+                num++
+            }
+        },300);
+        $("button").click(function () {
+            str=$("input").val();
+            arr=str.split("");
+            timer=null;
+            num=0;
+            str2="";
+            $("input").val("");
+            timer=setInterval(function () {
+                if(arr[num]===undefined){
+                    clearInterval(timer);
+                    $(".shu")[0].style.display="none"
+                }else {
+                    str2+=arr[num];
+                    $("span").eq(0).text(str2);
+                    num++
+                }
+            },300);
+        })
+    })
+</script>

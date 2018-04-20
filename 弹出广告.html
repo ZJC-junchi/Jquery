@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            width: 793px;
+            height: 414px;
+            background: url("ad.jpg");
+            position: fixed;
+            right: 0;
+            bottom: 0;
+            display: none;
+        }
+        span{
+            width: 40px;
+            height: 18px;
+            background: url("h.jpg");
+            position: absolute;
+            top: 0;
+            right: 0;
+            cursor: pointer;
+        }
+    </style>
+    <script src="jquery-1.11.1.js"></script>
+</head>
+<body>
+    <div class="box">
+        <span>
+
+        </span>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        $("div").slideDown(2000).slideUp(2000).fadeIn(2000);
+        $("span").click(function () {
+            $("div").fadeOut(2000)
+        })
+    })
+</script>
